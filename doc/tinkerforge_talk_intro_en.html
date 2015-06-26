@@ -1,0 +1,1062 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiveHacking - TinkerForge</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--This one seems to work all the time, but really small on ipad-->
+    <!--<meta name="viewport" content="initial-scale=0.4">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" media="all" href="theme/css/default.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+    <base target="_blank">
+    <!-- This amazingness opens all links in a new tab. -->
+    <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+    <slide hidden>
+        Hidden slides are left out of the presentation.
+    </slide>
+
+    <!--<slide class="logoslide nobackground">-->
+    <!--<article class="flexbox vcenter">-->
+    <!--&lt;!&ndash;<span><img src="images/logo_sru.png"></span>&ndash;&gt;-->
+    <!--<span><img src="images/logo_siteos.gif"></span>-->
+    <!--</article>-->
+    <!--</slide>-->
+
+    <slide class="segue dark nobackground">
+        <!--<slide class="fill nobackground" style="background-image: url(images/fun/joda_face.jpg)">-->
+        <aside class="gdbar">codecentric AG</aside>
+        <hgroup class="auto-fadein">
+            <h2>prepare..</h2>
+
+            <h3>.. for Industrial Prototyping - TinkerForge </h3>
+            <h4>Start 14:30 </h4>
+        </hgroup>
+        <!--<article class="flexbox vcenter">-->
+        <article class="flexbox vright">
+            <span><img src="images/Duke_lambda-java8.jpg"></span>
+        </article>
+    </slide>
+
+    <!--Intro-->
+    <slide class="title-slide segue nobackground">
+        <aside class="gdbar">codecentric AG</aside>
+        <!--<aside class="gdbar"><img src="images/logo_siteos.gif"></aside>-->
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+        <hgroup class="auto-fadein">
+            <h1 data-config-title><!-- populated from slide_config.json --></h1>
+
+            <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+
+            <p data-config-presenter><!-- populated from slide_config.json --></p>
+        </hgroup>
+    </slide>
+
+
+    <slide>
+        <!--<aside class="gdbar">codecentric AG</aside>-->
+        <hgroup>
+            <h2>Sven Ruppert</h2>
+
+            <h3>has been coding java since 1996</h3>
+        </hgroup>
+        <article>
+            <div style="text-align: center;">
+                <b>
+                    <p>Principal IT Consultant</p>
+
+                    <p><img src="images/logo-codecentric.png"></p>
+
+                    <p>Germany - Munich</p>
+
+                    <p>@SvenRuppert</p>
+                </b>
+            </div>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h2>Sven Ruppert</h2>
+
+            <h3>speaking java since 1996</h3>
+        </hgroup>
+        <article class="smaller">
+            </p>
+            <p>Projects in the field of:
+            <ul class="build">
+                <li>Automobileindustry</li>
+                <li>Energy</li>
+                <li>Finance / Leasing</li>
+                <li>Space- Satellit-</li>
+                <li>Governmnet / UN / Worldbank</li>
+            </ul>
+            </p>
+            <p>Wo?
+            <ul class="build">
+                <li>Europe</li>
+                <li>Asia - Indien up to Malaysia</li>
+            </ul>
+            </p>
+        </article>
+    </slide>
+
+
+
+
+    <!--#######################################################################################-->
+    <!--#######################################################################################-->
+    <!--#############################     TinkerForge     ##################################-->
+    <!--#######################################################################################-->
+    <!--#######################################################################################-->
+    <!--Kapitel Uebersicht-->
+    <slide>
+        <hgroup>
+            <h2>Java 8 - TinkerForge</h2>
+
+            <h3>Overview</h3>
+        </hgroup>
+        <article class="smaller">
+            <p>goals for today</p>
+            <ul class="build">
+                <li>What is TinkerForge ?</li>
+                <li>basic elements</li>
+                <li>BrickViewer / BrickDaemon</li>
+                <li>Hello World</li>
+                <li>MQTT example</li>
+                <li>testing / mocking</li>
+                <li>conclusion</li>
+            </ul>
+        </article>
+
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>What is TinkerForge</h3>
+        </hgroup>
+        <article class="smaller">
+            <p><img src="images/tinkerforge/tf-was_sind_wir.png" style="zoom: 150%"></p>
+
+            <p>a company from <b>Stukenbrock</b>.. hhmm</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>What is TinkerForge - it is in Germany</h3>
+        </hgroup>
+        <article class="smaller">
+            <p><img src="images/tinkerforge/ort-1.png" style="zoom: 50%"></p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>What is TinkerForge - near Bielefeld</h3>
+        </hgroup>
+        <article class="smaller">
+            <p><img src="images/tinkerforge/ort-2.png" style="zoom: 100%"></p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>What is TinkerForge - between Brackel and Borgholzhausen</h3>
+        </hgroup>
+        <article class="smaller">
+            <p><img src="images/tinkerforge/ort-3.png" style="zoom: 100%"></p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>What is TinkerForge - ok, it is green...</h3>
+        </hgroup>
+        <article class="smaller">
+            <p><img src="images/tinkerforge/ort-4.png" style="zoom: 100%"></p>
+        </article>
+    </slide>
+
+
+    <slide>
+        <hgroup>
+            <h3>Basic elements - Bricks</h3>
+        </hgroup>
+        <article>
+            <p><img src="images/tinkerforge/tf-brick.png" style="zoom: 150%"></p>
+
+            <p>Bricks can be controlled via USB. Each Brick has one task, for example to control DC-,
+                stepper- or servo motors. With Master Bricks it is possible to build a stack of Bricks.
+                Each stack only requires one USB connection. The RED Brick can be used to execute your program
+                directly and realize stand-alone applications without the need for external controlling devices.</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - Bricklets</h3>
+        </hgroup>
+        <article>
+            <p><img src="images/tinkerforge/tf-bricklet.png" style="zoom: 200%"></p>
+
+            <p>Bricklets extend the features of Bricks, they are connected to Bricks with a Bricklet cable.
+                There are various sensor Bricklets that can measure physical quantities such as temperature,
+                humidity, distance and so on. Another group of Bricklets can control LCDs or more generally
+                read and control analog and digital in- and outputs.
+            </p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - Master Extensions</h3>
+        </hgroup>
+        <article>
+            <p><img src="images/tinkerforge/tf-extension.png" style="zoom: 200%"></p>
+
+            <p>
+                Master Extensions extend the interfaces of single Master Bricks or whole Stacks of Bricks.
+                It is possible to connect stacks among themselves and to control them wirelessly over Ethernet or Wi-Fi.
+            </p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - how to connect</h3>
+        </hgroup>
+        <article>
+            <p><img src="images/tinkerforge/tf-modular.png" style="zoom: 130%"></p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3> Basic elements - supported platforms</h3>
+        </hgroup>
+        <article>
+            <p><img src="images/tinkerforge/tf-platformen.png" style="zoom: 200%"></p>
+
+            <p>
+                BrickViewer / BrickDaemon
+            </p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - supported programming languages</h3>
+        </hgroup>
+        <article>
+            <p><img src="images/tinkerforge/tf-platformen.png" style="zoom: 200%"></p>
+
+            <p>
+                C/C++, C#, Delphi/Lazarus, <b>Java</b>, JavaScript, LabVIEW, Mathematica, MATLAB/Octave, Perl, PHP, Python,
+                Ruby, Shell, Visual Basic .NET are currently supported.
+            </p>
+
+            <p>
+                Is the desired programming language not available, it is possible to control the modules directly over TCP/IP.
+            </p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - Module-Identification</h3>
+        </hgroup>
+        <article>
+            <p><img src="images/tinkerforge/tf-platformen.png" style="zoom: 200%"></p>
+
+            <p>
+                The modules are addressed with a unique ID and not based on the electrical wiring.
+                This allows to change the structure of the system at any time, without the need to change any of the source code.
+            </p>
+
+            <p>
+                Master UID / Brick UID Combinations
+            </p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - Connect via (1/3)</h3>
+        </hgroup>
+        <article>
+            <p>
+                <img src="images/tinkerforge/tf-medium-1.png" style="zoom: 200%">
+            </p>
+
+            <p>
+                WiFi, Wifi Extensions needed.
+            </p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - Connect via (2/3)</h3>
+        </hgroup>
+        <article>
+            <p>
+                <img src="images/tinkerforge/tf-medium-2.png" style="zoom: 200%">
+            </p>
+
+            <p>
+                USB, ca 1000 Unts/sec.
+            </p>
+
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - Connect via (3/3)</h3>
+        </hgroup>
+        <article>
+            <p>
+                <img src="images/tinkerforge/tf-medium-3.png" style="zoom: 200%">
+            </p>
+
+            <p>
+                Standalone -> RedBrick finally available
+            </p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Basic elements - Connect via (3/3)</h3>
+        </hgroup>
+        <article>
+            <p>
+                <img src="images/tinkerforge/tf-medium-3.png" style="zoom: 200%">
+            </p>
+
+            <p>
+                Standalone -> RedBrick finally available (I have a few here ;-) )
+            </p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>Basic elements - OpenSource</h3>
+        </hgroup>
+        <article>
+            <p><img src="images/tinkerforge/tf-platformen.png"></p>
+
+            <p>The complete software as well as the hardware modules are open source.
+                This makes it possible to use the Tinkerforge building blocks as a foundation
+                for your own developments. The software is licensed under GPL v2+, and the hardware
+                is licensed under CERN Open Hardware License. Whereas the API Bindings are public domain
+                (i.e. they can be used in a proprietary project).
+            </p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>BrickViewer / BrickDaemon</h3>
+        </hgroup>
+        <article>
+        <pre class="prettyprint" data-lang="xml">
+sudo apt-get install libusb-1.0-0 libudev0 pm-utils
+wget http://download.tinkerforge.com/
+tools/brickd/linux/brickd_linux_latest_armhf.deb
+sudo dpkg -i brickd_linux_latest_armhf.deb
+        </pre>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>BrickViewer / BrickDaemon</h3>
+        </hgroup>
+        <article>
+            <p>show it please..</p>
+        </article>
+    </slide>
+
+
+    <slide>
+        <hgroup>
+            <h3>Hello World - Temperature pre JDK8</h3>
+        </hgroup>
+        <article>
+        <pre class="prettyprint" data-lang="java">
+    IPConnection ipcon = new IPConnection();
+    ipcon.setAutoReconnect(true);
+    int timeoutMS = 2500;
+    ipcon.setTimeout(timeoutMS);
+    <b>BrickletTemperature temp = new BrickletTemperature("uid", ipcon);</b>
+    <b>temp.addTemperatureListener(new BrickletTemperature.TemperatureListener() {
+        @Override
+        public void temperature(short temperature) {
+        int temp = temperature / 100;
+        System.out.println("temp = " + temp);
+        }
+        }); </b>
+    try {
+      <b>ipcon.connect("localhost", 4229);</b>
+    } catch (IOException | AlreadyConnectedException e) { e.printStackTrace();}</pre>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>Hello World - Temperature JDK8</h3>
+        </hgroup>
+        <article>
+        <pre class="prettyprint" data-lang="java">
+    IPConnection ipcon = new IPConnection();
+    ipcon.setAutoReconnect(true);
+    int timeoutMS = 2500;
+    ipcon.setTimeout(timeoutMS);
+    <b>BrickletTemperature temp = new BrickletTemperature("uid", ipcon);
+        temp.addTemperatureListener(temperature -> {
+        int temp1 = temperature / 100;
+        System.out.println("temp = " + temp1);
+        });</b>
+    try {
+      <b>ipcon.connect("localhost", 4229);</b>
+    } catch (IOException | AlreadyConnectedException e) { e.printStackTrace(); } </pre>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>How to build your own API</h3>
+        </hgroup>
+        <article>
+            <p>for every language TinkerForge is using a generator</p>
+
+            <p><b>https://github.com/Tinkerforge/generators</b></p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>How to build your own API</h3>
+        </hgroup>
+        <article>
+            <p>for every language TinkerForge is using a generator</p>
+
+            <p><b>https://github.com/Tinkerforge/generators</b></p>
+
+            <p>the API is very language generic</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>How to build your own API</h3>
+        </hgroup>
+        <article>
+            <p>for every language TinkerForge is using a generator</p>
+
+            <p><b>https://github.com/Tinkerforge/generators</b></p>
+
+            <p>the API is very language generic</p>
+
+            <p>this means.. no special language level features are used</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>How to build your own API</h3>
+        </hgroup>
+        <article>
+            <p>for every language TinkerForge is using a generator</p>
+
+            <p><b>https://github.com/Tinkerforge/generators</b></p>
+
+            <p>the API is very language generic</p>
+
+            <p>this means.. no special language level features are used</p>
+
+            <p>a few demos you can look at <b>https://github.com/RapidPM/iot-tinkerforge</b></p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>maven</h3>
+        </hgroup>
+        <article>
+<pre class="prettyprint" data-lang="xml">
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.tinkerforge&lt;/groupId&gt;
+        &lt;artifactId&gt;tinkerforge&lt;/artifactId&gt;
+        &lt;version&gt;2.1.4&lt;/version&gt;
+        &lt;scope&gt;compile&lt;/scope&gt;
+    &lt;/dependency&gt;
+</pre>
+        </article>
+    </slide>
+
+
+    <slide>
+        <hgroup>
+            <h3>IoT Persistence</h3>
+        </hgroup>
+        <article>
+            <p>Persistence is mostly ... slooooow</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>IoT Persistence</h3>
+        </hgroup>
+        <article>
+            <p>Persistence is mostly ... slooooow</p>
+            <p>a funny thing that could happen...</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>IoT Persistence</h3>
+        </hgroup>
+        <article>
+            <p>Persistence is mostly ... slooooow</p>
+            <p>a funny thing that could happen...</p>
+            <p>if the ActionListener is working longer as the new value need to come...</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>IoT Persistence</h3>
+        </hgroup>
+        <article>
+            <p>Persistence is mostly ... slooooow</p>
+            <p>a funny thing that could happen...</p>
+            <p>if the ActionListener is working longer as the new value need to come...</p>
+            <p>... some Bricklets are not working anymore...</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>IoT Persistence</h3>
+        </hgroup>
+        <article>
+            <p>Persistence is mostly ... slooooow</p>
+            <p>a funny thing that could happen...</p>
+            <p>if the ActionListener is working longer as the new value need to come...</p>
+            <p>... some Bricklets are not working anymore...</p>
+            <p>you could use framworks like... for ex. MappDB </p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>IoT Persistence</h3>
+        </hgroup>
+        <article>
+            <p>Persistence is mostly ... slooooow</p>
+            <p>a funny thing that could happen...</p>
+            <p>if the ActionListener is working longer as the new value need to come...</p>
+            <p>... some Bricklets are not working anymore...</p>
+            <p>you could use framworks like... for ex. MappDB </p>
+            <p>but how to deal with slow ressources like MQTT ? </p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>MQTT</h3>
+        </hgroup>
+        <article>
+            <p>Broker</p>
+
+            <p>central service for the communiction</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>MQTT installation on a Raspi</h3>
+        </hgroup>
+        <article>
+            <p>wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key</p>
+
+            <p>sudo apt-key add mosquitto-repo.gpg.key</p>
+
+            <p>cd /etc/apt/sources.list.d/</p>
+
+            <p>sudo wget http://repo.mosquitto.org/debian/mosquitto-repo.list</p>
+
+            <p>sudo apt-get update</p>
+
+            <p>sudo apt-get install mosquitto</p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>MQTT</h3>
+        </hgroup>
+        <article>
+    <pre class="prettyprint" data-lang="xml">
+    &lt;!--MQTT--&gt;
+    &lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.paho&lt;/groupId&gt;
+    &lt;artifactId&gt;mqtt-client&lt;/artifactId&gt;
+    &lt;type&gt;jar&lt;/type&gt;
+    &lt;version&gt;0.4.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    </pre>
+        </article>
+    </slide>
+
+    <!--<slide>-->
+        <!--<hgroup>-->
+            <!--<h3>MQTT - MqttClientBuilder</h3>-->
+        <!--</hgroup>-->
+        <!--<article>-->
+    <!--<pre class="prettyprint" data-lang="java">-->
+    <!--public class MqttClientBuilder {-->
+        <!--/...-->
+        <!--public MqttClient build(){-->
+        <!--MqttClient client;-->
+        <!--try {-->
+            <!--if(memoryPersistence){-->
+               <!--client = new <b>MqttClient( uri,clientUID, new MemoryPersistence() )</b>;-->
+            <!--} else{-->
+               <!--client = new <b>MqttClient( uri,clientUID, new MqttDefaultFilePersistence())</b>;-->
+            <!--}-->
+        <!--} catch (MqttException e) {-->
+           <!--e.printStackTrace();-->
+           <!--client = null;-->
+        <!--}-->
+        <!--return client;-->
+    <!--}-->
+    <!--</pre>-->
+        <!--</article>-->
+    <!--</slide>-->
+    <slide>
+        <hgroup>
+            <h3>MQTT - MqttClientBuilder</h3>
+        </hgroup>
+        <article>
+    <pre class="prettyprint" data-lang="java">
+    /...
+    public MqttClient build(){
+        MqttClient client;
+        try {
+            if(memoryPersistence){
+                client = new MqttClient( uri,clientUID, <b>new MemoryPersistence()</b> );
+            } else{
+                client = new MqttClient( uri,clientUID, <b>new MqttDefaultFilePersistence()</b>);
+            }
+        } catch (MqttException e) {
+            e.printStackTrace();
+            client = null;
+        }
+        return client;
+    }
+    </pre>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>MQTT - MqttClientBuilder</h3>
+        </hgroup>
+        <article>
+    <pre class="prettyprint" data-lang="java">
+    public MqttClientBuilder clientUIDGenerated() {
+    <b>String substring = UUID.randomUUID()
+        .toString().replace("-", "").substring(0, 22); </b>
+    this.clientUID = substring;
+    System.out.println("clientUID = " + clientUID);
+    return this;
+    }
+    </pre>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>MQTT - MqttClientBuilder</h3>
+        </hgroup>
+        <article>
+    <pre class="prettyprint" data-lang="java">
+    public MqttClientBuilder clientUIDGenerated() {
+        <b>String substring = UUID.randomUUID()
+            .toString().replace("-", "").substring(0, 22); </b>
+        this.clientUID = substring;
+        System.out.println("clientUID = " + clientUID);
+        return this;
+    }
+    </pre>
+            <p>this UID must be unique...</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>MQTT - MqttClientBuilder</h3>
+        </hgroup>
+        <article>
+    <pre class="prettyprint" data-lang="java">
+    public MqttClientBuilder clientUIDGenerated() {
+        <b>String substring = UUID.randomUUID()
+            .toString().replace("-", "").substring(0, 22); </b>
+        this.clientUID = substring;
+        System.out.println("clientUID = " + clientUID);
+        return this;
+    }
+    </pre>
+            <p>this UID must be unique...</p>
+            <p>otherwise the last will win...</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>MQTT - how to use the MqttClientBuilder </h3>
+        </hgroup>
+        <article>
+    <pre class="prettyprint" data-lang="java">
+    public static final String <b>TOPIC = "TinkerForge/Wetterstation/"</b>;
+    public static final String <b>BROKER = "192.168.0.106"; //broker IP</b>
+
+    private static MqttClientBuilder builder = new MqttClientBuilder();
+    //.....
+    MqttClient sender = builder
+    .uri(<b>&quot;tcp://&quot; + BROKER+&quot;:1883&quot;</b>)
+    .clientUIDGenerated()
+    .build();
+    <b>
+        sender.connect();
+    </b>
+    MqttBuffer buffer = new MqttBuffer().client(sender).<b>topic(TOPIC).qos(1)</b>;
+    </pre>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>MQTT - how to use the MqttClientBuilder</h3>
+        </hgroup>
+        <article>
+    <pre class="prettyprint" data-lang="java">
+    public static final String <b>TOPIC = "TinkerForge/Wetterstation/"</b>;
+    public static final String <b>BROKER = "192.168.0.106"; //broker IP</b>
+
+    private static MqttClientBuilder builder = new MqttClientBuilder();
+    //.....
+    MqttClient sender = builder
+    .uri(<b>&quot;tcp://&quot; + BROKER+&quot;:1883&quot;</b>)
+    .clientUIDGenerated()
+    .build();
+    <b>
+        sender.connect();
+    </b>
+    MqttBuffer buffer = new MqttBuffer().client(sender).<b>topic(TOPIC).qos(1)</b>;
+    </pre>
+            <p>all this is not time critical..</p>
+        </article>
+    </slide>
+
+
+    <slide>
+        <hgroup>
+            <h3>MQTT - how to use the MqttClientBuilder</h3>
+        </hgroup>
+        <article>
+        <pre class="prettyprint" data-lang="java">
+    IPConnection ipcon = new IPConnection();
+    ipcon.setAutoReconnect(true);
+    int timeoutMS = 2500;
+    ipcon.setTimeout(timeoutMS);
+    <b>BrickletTemperature temp = new BrickletTemperature("uid", ipcon);
+        temp.addTemperatureListener(temperature -> {
+        int temp1 = temperature / 100;
+        buffer.sendAsync(temp1+"");
+        });</b>
+    try {
+      <b>ipcon.connect("localhost", 4229);</b>
+    } catch (IOException | AlreadyConnectedException e) { e.printStackTrace(); } </pre>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>MQTT - MqttBuffer</h3>
+        </hgroup>
+        <article>
+    <pre class="prettyprint" data-lang="java">
+    static final ExecutorService <b>fixedThreadPool = Executors.newFixedThreadPool(4);</b>
+
+    public void <b>sendAsync(String msg)</b> {
+    Supplier&lt;String&gt; task = () -&gt; {
+    try {
+    <b>client.publish(topic, (msg).getBytes(&quot;UTF-8&quot;),qos, retained);</b>
+    } catch (MqttException | UnsupportedEncodingException e) { e.printStackTrace(); }
+
+    return &quot;Done - &quot; + msg;
+    };
+
+    <b>CompletableFuture.supplyAsync(task, fixedThreadPool).thenAccept(System.out::println);</b>
+    }
+    </pre>
+        </article>
+    </slide>
+
+
+
+    <slide>
+        <hgroup>
+            <h3>testing / mocking</h3>
+        </hgroup>
+        <article>
+            <p>How to debug the IoT Device?</p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>testing / mocking</h3>
+        </hgroup>
+        <article>
+            <p>How to debug the IoT Device?</p>
+            <p>in the class <b>IPConnection</b> you can find a method <b>callDeviceListener</b></p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>testing / mocking</h3>
+        </hgroup>
+        <article>
+            <p>How to debug the IoT Device?</p>
+            <p>in the class <b>IPConnection</b> you can find a method <b>callDeviceListener</b></p>
+            <p>every Bricklet will have a unique type-ID. z.B. Temperatur :
+            <pre class="prettyprint" data-lang="java">byte callbackIndex = BrickletTemperature.CALLBACK_TEMPERATURE</pre>
+
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>testing / mocking</h3>
+        </hgroup>
+        <article>
+            <p>How to debug the IoT Device?</p>
+            <p>in the class <b>IPConnection</b> you can find a method <b>callDeviceListener</b></p>
+            <p>every Bricklet will have a unique type-ID. z.B. Temperatur :
+            <pre class="prettyprint" data-lang="java">byte callbackIndex = BrickletTemperature.CALLBACK_TEMPERATURE</pre>
+            <p>now you could use reflection...</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>testing / mocking</h3>
+        </hgroup>
+        <article>
+            <p>How to debug the IoT Device?</p>
+            <p>in the class <b>IPConnection</b> you can find a method <b>callDeviceListener</b></p>
+            <p>every Bricklet will have a unique type-ID. z.B. Temperatur :
+            <pre class="prettyprint" data-lang="java">byte callbackIndex = BrickletTemperature.CALLBACK_TEMPERATURE</pre>
+            <p>now you could use reflection...</p>
+            <p>a Thread will call this method with values..</p>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>testing / mocking (1/3)</h3>
+        </hgroup>
+        <article>
+            <p><pre class="prettyprint" data-lang="java">
+    IPConnection ipConnection = new IPConnection();
+    BrickletTemperature brickletTemperature
+            = new BrickletTemperature("kjh6", ipConnection);
+
+    byte callbackIndex = BrickletTemperature.CALLBACK_TEMPERATURE;
+    Class&lt;IPConnection&gt; ipConnectionClass = IPConnection.class;
+
+    Method callDeviceListener = ipConnectionClass.getDeclaredMethod(
+            "callDeviceListener",
+            BrickletTemperature.class, byte.class, byte[].class);
+
+    callDeviceListener.setAccessible(true);
+    </pre>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>testing / mocking (2/3)</h3>
+        </hgroup>
+        <article>
+            <p><pre class="prettyprint" data-lang="java">
+    new Thread(() -> {
+        try {
+            Random random = new Random();
+            while (true) {
+                int randomDiff = random.nextInt(3) - 1;
+                callDeviceListener.invoke(ipConnection, brickletTemperature,
+                (byte) callbackIndex, new byte[]{0, 0, 0, 0, 0, 0, 0, 0,
+                (byte) (startValue + randomDiff), 0});
+                Thread.sleep(5000l);
+            }
+        } catch (IllegalAccessException
+                    | InvocationTargetException
+                    | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }).start();
+    </pre>
+        </article>
+    </slide>
+
+    <slide>
+        <hgroup>
+            <h3>testing / mocking (3/3)</h3>
+        </hgroup>
+        <article>
+            <p><pre class="prettyprint" data-lang="java">
+    //not during testing/mocking
+    //ipConnection.connect(&quot;localhost&quot;, 4229);
+
+    brickletTemperature.addTemperatureListener(
+        temperature
+            -&gt; System.out.println(&quot;temperature = &quot; + temperature));
+    </pre>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>conclusion</h3>
+        </hgroup>
+        <article>
+            <p>no need for electrical work / putting things together like LEGO</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>conclusion</h3>
+        </hgroup>
+        <article>
+            <p>no need for electrical work / putting things together like LEGO</p>
+            <p>you can code in JAVA ;-)</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>conclusion</h3>
+        </hgroup>
+        <article>
+            <p>no need for electrical work / putting things together like LEGO</p>
+            <p>you can code in JAVA ;-)</p>
+            <p>API generator for all devices</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>conclusion</h3>
+        </hgroup>
+        <article>
+            <p>no need for electrical work / putting things together like LEGO</p>
+            <p>you can code in JAVA ;-)</p>
+            <p>API generator for all devices</p>
+            <p>easy to debug and to simulate with the orig API!!</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>conclusion</h3>
+        </hgroup>
+        <article>
+            <p>no need for electrical work / putting things together like LEGO</p>
+            <p>you can code in JAVA ;-)</p>
+            <p>API generator for all devices</p>
+            <p>easy to debug and to simulate with the orig API!!</p>
+            <p>complete OpenSource</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>conclusion</h3>
+        </hgroup>
+        <article>
+            <p>no need for electrical work / putting things together like LEGO</p>
+            <p>you can code in JAVA ;-)</p>
+            <p>API generator for all devices</p>
+            <p>easy to debug and to simulate with the orig API!!</p>
+            <p>complete OpenSource</p>
+            <p>TinkerForge will give you a wide range of sonsors and actors</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>conclusion</h3>
+        </hgroup>
+        <article>
+            <p>no need for electrical work / putting things together like LEGO</p>
+            <p>you can code in JAVA ;-)</p>
+            <p>API generator for all devices</p>
+            <p>easy to debug and to simulate with the orig API!!</p>
+            <p>complete OpenSource</p>
+            <p>TinkerForge will give you a wide range of sonsors and actors</p>
+            <p>cheap for prototyping</p>
+        </article>
+    </slide>
+    <slide>
+        <hgroup>
+            <h3>conclusion</h3>
+        </hgroup>
+        <article>
+            <p>no need for electrical work / putting things together like LEGO</p>
+            <p>you can code in JAVA ;-)</p>
+            <p>API generator for all devices</p>
+            <p>easy to debug and to simulate with the orig API!!</p>
+            <p>complete OpenSource</p>
+            <p>TinkerForge will give you a wide range of sonsors and actors</p>
+            <p>cheap for prototyping</p>
+            <p>easy modification / short time to market with prototypes</p>
+        </article>
+    </slide>
+
+
+    <!--#######################################################################################-->
+    <!--#######################################################################################-->
+    <!--#############################     KontaktInfos       ##################################-->
+    <!--#######################################################################################-->
+    <!--#######################################################################################-->
+
+    <slide class="thank-you-slide segue nobackground">
+        <!--<aside class="gdbar vleft">codecentric AG</aside>-->
+        <article class="flexbox vleft auto-fadein">
+            <h2>&lt;Thank You!&gt;</h2>
+
+            <p>
+                <img src="images/SvenRuppert.jpg" style="zoom: 30%">
+                <br/>
+            </p>
+
+            <p></p>
+        </article>
+        <p class="auto-fadein" data-config-contact>
+            <!-- populated from slide_config.json -->
+        </p>
+    </slide>
+
+    <slide class="backdrop"></slide>
+
+</slides>
+
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
